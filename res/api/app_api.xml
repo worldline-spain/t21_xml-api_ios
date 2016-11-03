@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<api baseurl="http://swapi.co/">
+    
+    <!--
+     Base Services
+     -->
+    <service
+        name="ServiceBase">
+        <param name="Content-Type" type="header" value="application/json" mandatory="true" />
+        <param name="Accept" type="header" value="application/json" mandatory="true" />
+        <param name="apiVersion" type="path" value="${apiVersion}" mandatory="true" />
+    </service>
+    
+    
+    <!--
+     Traits
+     -->
+    
+    <trait name="resourceBased">
+        <param name="resourceID" type="path" mandatory="true" />
+    </trait>
+    
+    <!-- <traits>
+     <trait name="pagination">
+     <param name="items" type="query" value="5" mandatory="true" />
+     <param name="offset" type="query" mandatory="true" />
+     </trait>
+     <trait name="location">
+     <param name="location" type="query" mandatory="true"/>
+     </trait>
+     <trait name="shape">
+     <param name="shape" type="query" mandatory="true"/>
+     </trait>
+     <trait name="radius">
+     <param name="radius" type="query" mandatory="true"/>
+     </trait>
+     <trait name="platform">
+     <param name="platform" type="query" value="IOS" mandatory="true"/>
+     </trait>
+     <trait name="city">
+     <param name="cityID" type="path" mandatory="true"/>
+     </trait>
+     </traits> -->
+    
+    
+    <!--
+     SW API WS
+     -->
+    <service
+        name="ServiceGetFilmsList" parent="ServiceBase"
+        url="{apiVersion}/films"
+        verb="GET">
+    </service>
+    
+    <service
+        name="ServiceGetFilm" parent="ServiceBase"
+        url="{apiVersion}/films/{resourceID}/"
+        verb="GET"
+        traits="resourceBased">
+    </service>
+    
+    <service
+        name="ServiceGetPeopleList" parent="ServiceBase"
+        url="{apiVersion}/people"
+        verb="GET">
+    </service>
+    
+    <service
+        name="ServiceGetPerson" parent="ServiceBase"
+        url="{apiVersion}/people/{resourceID}/"
+        verb="GET"
+        traits="resourceBased">
+    </service>
+    
+    <service
+        name="ServiceGetPlanetsList" parent="ServiceBase"
+        url="{apiVersion}/planets"
+        verb="GET">
+    </service>
+    
+    <service
+        name="ServiceGetPlanet" parent="ServiceBase"
+        url="{apiVersion}/planets/{resourceID}/"
+        verb="GET"
+        traits="resourceBased">
+    </service>
+    
+    <service
+        name="ServiceGetSpeciesList" parent="ServiceBase"
+        url="{apiVersion}/species"
+        verb="GET">
+    </service>
+    
+    <service
+        name="ServiceGetRace" parent="ServiceBase"
+        url="{apiVersion}/species/{resourceID}/"
+        verb="GET"
+        traits="resourceBased">
+    </service>
+    
+</api>
+
