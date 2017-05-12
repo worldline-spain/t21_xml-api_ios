@@ -33,6 +33,7 @@
 -(void)removeTrait:(T21APIHTTPTrait*)trait;
 -(T21APIHTTPTrait*)getTrait:(NSString*)traitIdentifier;
 
+-(NSArray*)getServiceArray;
 
 -(BOOL)validateApi:(NSError**)error;
 

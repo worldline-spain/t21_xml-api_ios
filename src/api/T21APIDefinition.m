@@ -114,6 +114,14 @@
     return [traitsCollection objectForKey:traitIdentifier];
 }
 
+-(NSArray*)getServiceArray {
+    NSArray * services =  [[self getServices] allObjects];
+    if (services) {
+        return services;
+    }
+    return @[];
+}
+
 -(BOOL)validateApi:(NSError**)error
 {
     //Validate base url
