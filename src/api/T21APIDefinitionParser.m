@@ -406,7 +406,9 @@ static NSString * const VERB_HEAD = @"HEAD";
                 
                 if(mandatory){
                     //mandatory params
-                    [mandatoryParams setObject:@"" forKey:paramName];
+                    //Assign associated mandatory value for the 'paramName' key.
+                    id mandatoryValues = paramValue ?: paramValues ?: @"";
+                    [mandatoryParams setObject:mandatoryValues forKey:paramName];
                 }
             }
             else
