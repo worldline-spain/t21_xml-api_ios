@@ -394,6 +394,7 @@ static NSString * const VERB_HEAD = @"HEAD";
                     mandatoryParams = mandatoryQueryParams;
                 } else {
                     // BODY
+                    mandatoryParams = mandatoryQueryParams;
                 }
                 
                 if (paramValue){
